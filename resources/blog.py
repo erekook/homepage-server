@@ -17,7 +17,7 @@ class Blogs(Resource):
         blogs = Category.query.all()
         print(blogs[0].cate_name)
         if blogs:
-            return [blog for blog in blogs]
+            return [blog for blog in blogs], 200
         return { 'message': 'blogs not found' }, 404
 
 
