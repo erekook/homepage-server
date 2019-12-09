@@ -7,17 +7,16 @@ from app import db
 
 api = Api(blog_bp)
 
-category_fields = {
-    'cate_name':   fields.String
-}
+# category_fields = {
+#     'cate_name':   fields.String
+# }
 
 class Blogs(Resource):
-    @marshal_with(category_fields)
+    # @marshal_with(category_fields)
     def get(self):
-        blogs = Category.query.all()
-        print(blogs[0].cate_name)
+        blogs = Blog.query.all()
         if blogs:
-            return [blog for blog in blogs]
+            return [blog.json_str() for blog in blogs]
         return { 'message': 'blogs not found' }, 404
 
 
