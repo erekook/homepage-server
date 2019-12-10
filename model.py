@@ -1,5 +1,6 @@
 from app import db
 from datetime import datetime
+from passlib.apps import custom_app_context as pwd_context
 
 # 博客分类
 class Category(db.Model):
@@ -8,7 +9,7 @@ class Category(db.Model):
     cate_name = db.Column(db.String(50), nullable=False)
 
     # 反向引用 blog表 每个category对象都有一个blog属性
-    blogs = db.relationship("Blog", backref="blog_category", lazy="dynamic")
+    blogs = db.relationship("Blog", backref="_category", lazy="dynamic")
 
     def __repr__(self):
         return '<Category %r>' % self.cate_name
@@ -29,11 +30,16 @@ class User(db.Model):
     phone = db.Column(db.String(20), unique=True, nullable=False)
     motto = db.Column(db.String(500), nullable=True)
     is_locked = db.Column(db.Integer, default=0)
-    create_time = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    create_time = db.Column(db.DateTime, nullable=False, default=datetime.now)
     update_time = db.Column(db.DateTime, nullable=False)
 
     # 反向引用 blog表 每个user对象都有一个blog属性
     blog = db.relationship("Blog", backref="edit_user", lazy="dynamic")
+    def hash_password(self, pwd): #给密码加密方法
+        self.pwd = pwd_context.encrypt(pwd)
+ 
+    def verify_password(self, pwd): #验证密码方法
+        return pwd_context.verify(pwd, self.pwd)
 
     def __repr__(self):
         return '<User %r>' % self.user_name
@@ -51,7 +57,7 @@ class Blog(db.Model):
     title = db.Column(db.String(200), nullable=False)
     content = db.Column(db.Text, nullable=False)
     read_num = db.Column(db.Integer, default=0)
-    create_time = db.Column(db.DateTime, nullable=False)
+    create_time = db.Column(db.DateTime, nullable=False, default=datetime.now)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
     user = db.relationship('User', backref="edit_blog", lazy=True)
 
