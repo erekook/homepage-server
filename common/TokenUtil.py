@@ -3,8 +3,9 @@ import base64
 import hmac
 from functools import wraps
 from flask import request
-#生成token 入参：用户email
+from common.BaseResponse import base_response
 
+#生成token 入参：用户email
 def generate_token(key, expire=3600):
     ts_str = str(time.time() + expire)
     ts_byte = ts_str.encode("utf-8")
@@ -35,7 +36,11 @@ def certify_token(key, token):
 
 def login_required(f):
     @wraps(f)
-    def decorated_function(*args, **kwargs):
-        print(request.headers)
-        return f(*args, **kwargs)
+    def decorated_function(*args, **wkargs):
+        token = request.headers['Authorization']
+        email = f(*args, **wkargs)
+        is_pass = certify_token(email, token)
+        if not is_pass:
+            return base_response(code=-1,msg="未登陆")
+        return f(*args, **wkargs)
     return decorated_function

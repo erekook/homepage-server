@@ -1,4 +1,4 @@
-from flask_restful import Resource, Api, fields, reqparse
+from flask_restful import Resource, Api, fields, reqparse, request
 from admin import admin_bp
 from datetime import datetime
 import sys 
@@ -52,8 +52,11 @@ class Register(Resource):
 
 class Login(Resource):
     @login_required
-    def get(self):
-        return "ok"
+    def get(self, email):
+        return email
+    
+    # def do_something(email, isPass):
+    #     return email
 
     # def post(self):
     #     param = parser.parse_args()
@@ -76,5 +79,5 @@ class Login(Resource):
 
 
 api.add_resource(Register, '/register')
-api.add_resource(Login, '/login')
+api.add_resource(Login, '/login/<string:email>')
 
