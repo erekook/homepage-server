@@ -1,11 +1,20 @@
 from flask_restful import Resource, Api
 from resources import quote_bp
+import random
+import sys 
+sys.path.append("..") 
+import model
+from app import db
+from common.BaseResponse import base_response
+
 
 api = Api(quote_bp)
 
 class Quotes(Resource):
     def get(self):
-        return '爱上你我劫数难逃，为你坐爱情的牢，一辈子让情锁在我胸口绕。'
+        quotes = model.Quote.query.all()
+        if quotes:
+            return base_response(data=quotes[random.randint(0,len(quotes)-1)].json_str())
+        return base_response(code=-1, msg="没有查询到结果")
 
-
-api.add_resource(Quotes, '/quotes')
+api.add_resource(Quotes, '/rand')

@@ -1,6 +1,6 @@
 
 # 自定义返回类型
-def base_response(code=0, data=None, msg=""):
+def base_response(code=0, data=None, msg="操作成功"):
     if code == -1:
         data = None
         msg = "操作失败" if msg == "" else msg

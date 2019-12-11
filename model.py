@@ -5,6 +5,7 @@ from passlib.apps import custom_app_context as pwd_context
 # 博客分类
 class Category(db.Model):
     __tablename__ = "category"
+    __table_args__ = {'extend_existing': True}
     id = db.Column(db.Integer, primary_key=True)
     cate_name = db.Column(db.String(50), nullable=False)
 
@@ -20,9 +21,9 @@ class Category(db.Model):
         }
 
 
-# 用户信息
 class User(db.Model):
     __tablename__ = "user"
+    __table_args__ = {'extend_existing': True}
     id = db.Column(db.Integer, primary_key=True)
     user_name = db.Column(db.String(50), unique=True, nullable=False)
     email = db.Column(db.String(200), unique=True, nullable=False)
@@ -50,9 +51,10 @@ class User(db.Model):
         }
 
 
-# 主题内容
+# article
 class Blog(db.Model):
     __tablename__ = "blog"
+    __table_args__ = {'extend_existing': True}
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(200), nullable=False)
     content = db.Column(db.Text, nullable=False)
@@ -78,3 +80,42 @@ class Blog(db.Model):
             "user": self.user.json_str(),
             "category": self.category.json_str()
         }
+
+
+# just a quote
+class Quote(db.Model):
+    __tablename__ = "quote"
+    __table_args__ = {'extend_existing': True}
+    id = db.Column(db.Integer, primary_key=True)
+    content = db.Column(db.String(500), nullable=False)
+    create_time = db.Column(db.DateTime, nullable=False, default=datetime.now)
+    
+    def __repr__(self):
+        return '<quote %r>' % self.content
+
+    def json_str(self):
+        return {
+            "content": self.content
+        }
+
+# 邮箱验证码
+class EmailCode(db.Model):
+    __tablename__ = "email_code"
+    __table_args__ = {'extend_existing': True}
+    id = db.Column(db.Integer, primary_key=True)
+    code = db.Column(db.String(10), nullable=False)
+    email = db.Column(db.String(100), nullable=False)
+    create_time = db.Column(db.DateTime, nullable=False, default=datetime.now)
+    
+    def __repr__(self):
+        return '<EmailCode %r>' % self.email
+
+    def json_str(self):
+        return {
+            "code": self.code,
+            "email": self.email,
+            "create_time": self.create_time
+        }
+
+if __name__ == "__main__":
+    db.create_all()
