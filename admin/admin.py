@@ -15,6 +15,7 @@ api = Api(admin_bp)
 parser = reqparse.RequestParser()
 parser.add_argument('user_name', type=str)
 parser.add_argument('email', type=str)
+parser.add_argument('code', type=str)
 parser.add_argument('pwd', type=str)
 parser.add_argument('confirm_pwd', type=str)
 parser.add_argument('phone', type=str)
@@ -24,10 +25,15 @@ class SendEmailCode(Resource):
     def get(self, email):
         if not email:
             return base_response(code=-2)
+        user = model.User.query.filter_by(email=email).first()
+        if user:
+            return base_response(code=-1,msg="邮箱地址已经被注册了")
         # genarate 6 random code
         rand_code = "".join([str(random.randint(0,9)) for n in range(6)])
+        
         # send email code...
-        # todo
+        # TODO TODO TODO
+
         # save code to db
         emailCode = model.EmailCode.query.filter_by(email=email).first()
         if emailCode:
@@ -43,10 +49,13 @@ class Register(Resource):
     # 注册
     def post(self):
         param = parser.parse_args()
-        if not param.user_name:
-            return base_response(code=-2)
+        # if not param.user_name:
+        #     return base_response(code=-2)
 
         if not param.email:
+            return base_response(code=-2)
+
+        if not param.code:
             return base_response(code=-2)
 
         if not param.pwd:
@@ -55,18 +64,27 @@ class Register(Resource):
         if not param.confirm_pwd:
             return base_response(code=-2)
 
-        if not param.phone:
-            return base_response(code=-2)
+        # if not param.phone:
+        #     return base_response(code=-2)
         
         if param.pwd != param.confirm_pwd:
             return base_response(code=-1, msg="两次密码输入不一致")
 
-        user = model.User(user_name = param.user_name, email = param.email, phone = param.phone)
-        user.hash_password(param.pwd)
-        db.session.add(user)
-        db.session.commit()
-        
-        return base_response()
+        right_code = model.EmailCode.query.filter_by(email=param.email, code=param.code).first()
+        if not right_code:
+            return base_response(code=-1,msg="请重新发送验证码")
+        # valid the email code is right
+        if right_code.code != param.code:
+            return base_response(code=-1,msg="验证码错误")
+        else:
+            user = model.User(email = param.email)
+            user.hash_password(param.pwd)
+            db.session.add(user)
+            db.session.commit()
+
+            ## 返回token
+            ## TODO TODO TODO
+            return base_response()
 
 class Login(Resource):
     # @login_required
