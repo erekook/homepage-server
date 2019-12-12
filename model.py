@@ -25,17 +25,17 @@ class User(db.Model):
     __tablename__ = "user"
     __table_args__ = {'extend_existing': True}
     id = db.Column(db.Integer, primary_key=True)
-    user_name = db.Column(db.String(50), unique=True, nullable=False)
+    user_name = db.Column(db.String(50), unique=True, nullable=True)
     email = db.Column(db.String(200), unique=True, nullable=False)
     pwd = db.Column(db.String(30), nullable=False)
-    phone = db.Column(db.String(20), unique=True, nullable=False)
+    phone = db.Column(db.String(20), unique=True, nullable=True)
     motto = db.Column(db.String(500), nullable=True)
     is_locked = db.Column(db.Integer, default=0)
     create_time = db.Column(db.DateTime, nullable=False, default=datetime.now)
     update_time = db.Column(db.DateTime, nullable=False)
 
     # 反向引用 blog表 每个user对象都有一个blog属性
-    blog = db.relationship("Blog", backref="edit_user", lazy="dynamic")
+    blog = db.relationship("Blog", backref="_user", lazy="dynamic")
     def hash_password(self, pwd): #给密码加密方法
         self.pwd = pwd_context.encrypt(pwd)
  
@@ -43,11 +43,11 @@ class User(db.Model):
         return pwd_context.verify(pwd, self.pwd)
 
     def __repr__(self):
-        return '<User %r>' % self.user_name
+        return '<User %r>' % self.email
 
     def json_str(self):
         return {
-            "user_name": self.user_name
+            "email": self.email
         }
 
 
@@ -66,8 +66,7 @@ class Blog(db.Model):
     # 外键关联category表每个topic对象都有一个category属性
     category_id = db.Column(db.Integer, db.ForeignKey("category.id"), nullable=False)
     category = db.relationship('Category', backref=db.backref('category_blogs', lazy=True))
-    # 外键关联user表每个topic对象都有一个user属性
-    # user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+    
     def __repr__(self):
         return '<blog %r>' % self.title
 
@@ -78,7 +77,8 @@ class Blog(db.Model):
             "content": self.content,
             "read_num": self.read_num,
             "user": self.user.json_str(),
-            "category": self.category.json_str()
+            "category": self.category.json_str(),
+            "create_time": str(self.create_time)
         }
 
 

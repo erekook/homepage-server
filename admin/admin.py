@@ -8,6 +8,7 @@ import model
 from app import db
 from common.BaseResponse import base_response
 from common.TokenUtil import generate_token, certify_token, login_required
+from common.EmailUtil import EmailUtil
 
 
 api = Api(admin_bp)
@@ -32,8 +33,8 @@ class SendEmailCode(Resource):
         rand_code = "".join([str(random.randint(0,9)) for n in range(6)])
         
         # send email code...
-        # TODO TODO TODO
-
+        sender = EmailUtil(email)
+        sender.send_email_code(rand_code)
         # save code to db
         emailCode = model.EmailCode.query.filter_by(email=email).first()
         if emailCode:
@@ -70,7 +71,7 @@ class Register(Resource):
         if param.pwd != param.confirm_pwd:
             return base_response(code=-1, msg="两次密码输入不一致")
 
-        right_code = model.EmailCode.query.filter_by(email=param.email, code=param.code).first()
+        right_code = model.EmailCode.query.filter_by(email=param.email).first()
         if not right_code:
             return base_response(code=-1,msg="请重新发送验证码")
         # valid the email code is right
@@ -81,10 +82,11 @@ class Register(Resource):
             user.hash_password(param.pwd)
             db.session.add(user)
             db.session.commit()
+            db.session.refresh(user)
 
             ## 返回token
-            ## TODO TODO TODO
-            return base_response()
+            token = generate_token(param.email)
+            return base_response(data={ "token":token, "user": user.json_str() })
 
 class Login(Resource):
     # @login_required
@@ -107,7 +109,7 @@ class Login(Resource):
             return base_response(code=-1,msg="未找到用户，请注册")
         if user.verify_password(param.pwd):
             token = generate_token(param.email)
-            return base_response(data={"token":token})
+            return base_response(data={ "token": token, "user": user.json_str() })
         else:
             return base_response(code=-1,msg="密码错误")
 
