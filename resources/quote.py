@@ -17,4 +17,10 @@ class Quotes(Resource):
             return base_response(data=quotes[random.randint(0,len(quotes)-1)].json_str())
         return base_response(code=-1, msg="没有查询到结果")
 
+class Hello(Resource):
+    def get(self):
+        return "hello"
+
 api.add_resource(Quotes, '/rand')
+api.add_resource(Hello, '/hello')
+

@@ -1,0 +1,215 @@
+[2019-12-13 11:15:19 +0800] [16505] [INFO] Starting gunicorn 20.0.4
+[2019-12-13 11:15:19 +0800] [16505] [ERROR] Retrying in 1 second.
+[2019-12-13 11:15:20 +0800] [16505] [ERROR] Retrying in 1 second.
+[2019-12-13 11:15:21 +0800] [16505] [ERROR] Retrying in 1 second.
+[2019-12-13 11:15:22 +0800] [16505] [ERROR] Retrying in 1 second.
+[2019-12-13 11:15:23 +0800] [16505] [ERROR] Retrying in 1 second.
+[2019-12-13 11:15:24 +0800] [16505] [ERROR] Can't connect to ('127.0.0.15050', 8000)
+[2019-12-13 11:35:49 +0800] [20813] [INFO] Starting gunicorn 20.0.4
+[2019-12-13 11:35:49 +0800] [20813] [ERROR] Retrying in 1 second.
+[2019-12-13 11:35:50 +0800] [20813] [ERROR] Retrying in 1 second.
+[2019-12-13 11:35:51 +0800] [20813] [ERROR] Retrying in 1 second.
+[2019-12-13 11:35:52 +0800] [20813] [ERROR] Retrying in 1 second.
+[2019-12-13 11:35:53 +0800] [20813] [ERROR] Retrying in 1 second.
+[2019-12-13 11:35:54 +0800] [20813] [ERROR] Can't connect to ('127.0.0.15050', 8000)
+[2019-12-13 11:40:30 +0800] [21758] [INFO] Starting gunicorn 20.0.4
+[2019-12-13 11:40:30 +0800] [21758] [INFO] Listening at: http://127.0.0.1:5050 (21758)
+[2019-12-13 11:40:30 +0800] [21758] [INFO] Using worker: sync
+[2019-12-13 11:40:30 +0800] [21768] [INFO] Booting worker with pid: 21768
+[2019-12-13 11:40:30 +0800] [21778] [INFO] Booting worker with pid: 21778
+[2019-12-13 11:40:30 +0800] [21782] [INFO] Booting worker with pid: 21782
+[2019-12-13 11:40:30 +0800] [21783] [INFO] Booting worker with pid: 21783
+[2019-12-13 11:42:55 +0800] [22326] [INFO] Starting gunicorn 20.0.4
+[2019-12-13 11:42:55 +0800] [22326] [ERROR] Connection in use: ('127.0.0.1', 5050)
+[2019-12-13 11:42:55 +0800] [22326] [ERROR] Retrying in 1 second.
+[2019-12-13 11:42:56 +0800] [22326] [ERROR] Connection in use: ('127.0.0.1', 5050)
+[2019-12-13 11:42:56 +0800] [22326] [ERROR] Retrying in 1 second.
+[2019-12-13 11:42:57 +0800] [22326] [ERROR] Connection in use: ('127.0.0.1', 5050)
+[2019-12-13 11:42:57 +0800] [22326] [ERROR] Retrying in 1 second.
+[2019-12-13 11:42:58 +0800] [22326] [ERROR] Connection in use: ('127.0.0.1', 5050)
+[2019-12-13 11:42:58 +0800] [22326] [ERROR] Retrying in 1 second.
+[2019-12-13 11:42:59 +0800] [22326] [ERROR] Connection in use: ('127.0.0.1', 5050)
+[2019-12-13 11:42:59 +0800] [22326] [ERROR] Retrying in 1 second.
+[2019-12-13 11:43:00 +0800] [22326] [ERROR] Can't connect to ('127.0.0.1', 5050)
+[2019-12-13 13:01:29 +0800] [21783] [INFO] Parent changed, shutting down: <Worker 21783>
+[2019-12-13 13:01:29 +0800] [21783] [INFO] Worker exiting (pid: 21783)
+[2019-12-13 13:01:35 +0800] [21768] [INFO] Parent changed, shutting down: <Worker 21768>
+[2019-12-13 13:01:35 +0800] [21768] [INFO] Worker exiting (pid: 21768)
+[2019-12-13 13:01:36 +0800] [21778] [INFO] Parent changed, shutting down: <Worker 21778>
+[2019-12-13 13:01:36 +0800] [21778] [INFO] Worker exiting (pid: 21778)
+[2019-12-13 13:01:36 +0800] [21782] [INFO] Parent changed, shutting down: <Worker 21782>
+[2019-12-13 13:01:36 +0800] [21782] [INFO] Worker exiting (pid: 21782)
+[2019-12-13 13:05:40 +0800] [7348] [INFO] Starting gunicorn 20.0.4
+[2019-12-13 13:05:40 +0800] [7348] [INFO] Listening at: http://127.0.0.1:5050 (7348)
+[2019-12-13 13:05:40 +0800] [7348] [INFO] Using worker: sync
+[2019-12-13 13:05:40 +0800] [7356] [INFO] Booting worker with pid: 7356
+[2019-12-13 13:05:40 +0800] [7364] [INFO] Booting worker with pid: 7364
+[2019-12-13 13:05:40 +0800] [7366] [INFO] Booting worker with pid: 7366
+[2019-12-13 13:08:40 +0800] [7356] [INFO] Parent changed, shutting down: <Worker 7356>
+[2019-12-13 13:08:40 +0800] [7356] [INFO] Worker exiting (pid: 7356)
+[2019-12-13 13:08:41 +0800] [7364] [INFO] Parent changed, shutting down: <Worker 7364>
+[2019-12-13 13:08:41 +0800] [7364] [INFO] Worker exiting (pid: 7364)
+[2019-12-13 13:08:47 +0800] [8180] [INFO] Starting gunicorn 20.0.4
+[2019-12-13 13:08:47 +0800] [8180] [INFO] Listening at: http://127.0.0.1:5051 (8180)
+[2019-12-13 13:08:47 +0800] [8180] [INFO] Using worker: sync
+[2019-12-13 13:08:47 +0800] [8193] [INFO] Booting worker with pid: 8193
+[2019-12-13 13:08:47 +0800] [8200] [INFO] Booting worker with pid: 8200
+[2019-12-13 13:08:47 +0800] [8203] [INFO] Booting worker with pid: 8203
+[2019-12-13 13:09:29 +0800] [7366] [INFO] Parent changed, shutting down: <Worker 7366>
+[2019-12-13 13:09:29 +0800] [7366] [INFO] Worker exiting (pid: 7366)
+[2019-12-13 14:11:01 +0800] [8180] [CRITICAL] WORKER TIMEOUT (pid:8193)
+[2019-12-13 14:11:01 +0800] [8193] [INFO] Worker exiting (pid: 8193)
+[2019-12-13 14:11:01 +0800] [21526] [INFO] Booting worker with pid: 21526
+[2019-12-13 14:11:08 +0800] [8180] [CRITICAL] WORKER TIMEOUT (pid:8200)
+[2019-12-13 14:11:08 +0800] [8200] [INFO] Worker exiting (pid: 8200)
+[2019-12-13 14:11:08 +0800] [21869] [INFO] Booting worker with pid: 21869
+[2019-12-13 14:16:04 +0800] [8180] [CRITICAL] WORKER TIMEOUT (pid:8203)
+[2019-12-13 14:16:04 +0800] [8203] [INFO] Worker exiting (pid: 8203)
+[2019-12-13 14:16:04 +0800] [23348] [INFO] Booting worker with pid: 23348
+[2019-12-13 14:19:52 +0800] [8180] [CRITICAL] WORKER TIMEOUT (pid:23348)
+[2019-12-13 14:19:52 +0800] [23348] [INFO] Worker exiting (pid: 23348)
+[2019-12-13 14:19:52 +0800] [24110] [INFO] Booting worker with pid: 24110
+[2019-12-13 14:20:06 +0800] [8180] [CRITICAL] WORKER TIMEOUT (pid:21869)
+[2019-12-13 14:20:06 +0800] [21869] [INFO] Worker exiting (pid: 21869)
+[2019-12-13 14:20:06 +0800] [24201] [INFO] Booting worker with pid: 24201
+[2019-12-13 14:20:40 +0800] [8180] [CRITICAL] WORKER TIMEOUT (pid:21526)
+[2019-12-13 14:20:40 +0800] [21526] [INFO] Worker exiting (pid: 21526)
+[2019-12-13 14:20:40 +0800] [24340] [INFO] Booting worker with pid: 24340
+[2019-12-13 14:22:06 +0800] [24201] [INFO] Parent changed, shutting down: <Worker 24201>
+[2019-12-13 14:22:06 +0800] [24201] [INFO] Worker exiting (pid: 24201)
+[2019-12-13 14:22:40 +0800] [24340] [INFO] Parent changed, shutting down: <Worker 24340>
+[2019-12-13 14:22:40 +0800] [24340] [INFO] Worker exiting (pid: 24340)
+[2019-12-13 14:24:35 +0800] [25738] [INFO] Starting gunicorn 20.0.4
+[2019-12-13 14:24:35 +0800] [25738] [ERROR] Connection in use: ('127.0.0.1', 5051)
+[2019-12-13 14:24:35 +0800] [25738] [ERROR] Retrying in 1 second.
+[2019-12-13 14:24:36 +0800] [25738] [ERROR] Connection in use: ('127.0.0.1', 5051)
+[2019-12-13 14:24:36 +0800] [25738] [ERROR] Retrying in 1 second.
+[2019-12-13 14:24:37 +0800] [25738] [ERROR] Connection in use: ('127.0.0.1', 5051)
+[2019-12-13 14:24:37 +0800] [25738] [ERROR] Retrying in 1 second.
+[2019-12-13 14:24:38 +0800] [25738] [ERROR] Connection in use: ('127.0.0.1', 5051)
+[2019-12-13 14:24:38 +0800] [25738] [ERROR] Retrying in 1 second.
+[2019-12-13 14:24:39 +0800] [25738] [ERROR] Connection in use: ('127.0.0.1', 5051)
+[2019-12-13 14:24:39 +0800] [25738] [ERROR] Retrying in 1 second.
+[2019-12-13 14:24:40 +0800] [25738] [ERROR] Can't connect to ('127.0.0.1', 5051)
+[2019-12-13 14:29:41 +0800] [26882] [INFO] Starting gunicorn 20.0.4
+[2019-12-13 14:29:41 +0800] [26882] [ERROR] Connection in use: ('127.0.0.1', 5051)
+[2019-12-13 14:29:41 +0800] [26882] [ERROR] Retrying in 1 second.
+[2019-12-13 14:29:42 +0800] [26882] [ERROR] Connection in use: ('127.0.0.1', 5051)
+[2019-12-13 14:29:42 +0800] [26882] [ERROR] Retrying in 1 second.
+[2019-12-13 14:29:43 +0800] [26882] [ERROR] Connection in use: ('127.0.0.1', 5051)
+[2019-12-13 14:29:43 +0800] [26882] [ERROR] Retrying in 1 second.
+[2019-12-13 14:29:44 +0800] [26882] [ERROR] Connection in use: ('127.0.0.1', 5051)
+[2019-12-13 14:29:44 +0800] [26882] [ERROR] Retrying in 1 second.
+[2019-12-13 14:29:45 +0800] [26882] [ERROR] Connection in use: ('127.0.0.1', 5051)
+[2019-12-13 14:29:45 +0800] [26882] [ERROR] Retrying in 1 second.
+[2019-12-13 14:29:46 +0800] [26882] [ERROR] Can't connect to ('127.0.0.1', 5051)
+[2019-12-13 14:30:09 +0800] [27022] [INFO] Starting gunicorn 20.0.4
+[2019-12-13 14:30:09 +0800] [27022] [INFO] Listening at: http://127.0.0.1:5051 (27022)
+[2019-12-13 14:30:09 +0800] [27022] [INFO] Using worker: sync
+[2019-12-13 14:30:09 +0800] [27032] [INFO] Booting worker with pid: 27032
+[2019-12-13 14:30:09 +0800] [27036] [INFO] Booting worker with pid: 27036
+[2019-12-13 14:30:09 +0800] [27040] [INFO] Booting worker with pid: 27040
+[2019-12-13 14:32:45 +0800] [27022] [CRITICAL] WORKER TIMEOUT (pid:27040)
+[2019-12-13 14:32:45 +0800] [27040] [INFO] Worker exiting (pid: 27040)
+[2019-12-13 14:32:45 +0800] [27582] [INFO] Booting worker with pid: 27582
+[2019-12-13 14:35:44 +0800] [27036] [INFO] Parent changed, shutting down: <Worker 27036>
+[2019-12-13 14:35:44 +0800] [27036] [INFO] Worker exiting (pid: 27036)
+[2019-12-13 14:35:45 +0800] [27582] [INFO] Parent changed, shutting down: <Worker 27582>
+[2019-12-13 14:35:45 +0800] [27582] [INFO] Worker exiting (pid: 27582)
+[2019-12-13 14:36:30 +0800] [28384] [INFO] Starting gunicorn 20.0.4
+[2019-12-13 14:36:30 +0800] [28384] [ERROR] Connection in use: ('127.0.0.1', 5051)
+[2019-12-13 14:36:30 +0800] [28384] [ERROR] Retrying in 1 second.
+[2019-12-13 14:36:31 +0800] [28384] [ERROR] Connection in use: ('127.0.0.1', 5051)
+[2019-12-13 14:36:31 +0800] [28384] [ERROR] Retrying in 1 second.
+[2019-12-13 14:36:32 +0800] [28384] [ERROR] Connection in use: ('127.0.0.1', 5051)
+[2019-12-13 14:36:32 +0800] [28384] [ERROR] Retrying in 1 second.
+[2019-12-13 14:36:33 +0800] [28384] [ERROR] Connection in use: ('127.0.0.1', 5051)
+[2019-12-13 14:36:33 +0800] [28384] [ERROR] Retrying in 1 second.
+[2019-12-13 14:36:34 +0800] [28384] [ERROR] Connection in use: ('127.0.0.1', 5051)
+[2019-12-13 14:36:34 +0800] [28384] [ERROR] Retrying in 1 second.
+[2019-12-13 14:36:35 +0800] [28384] [ERROR] Can't connect to ('127.0.0.1', 5051)
+[2019-12-13 14:48:11 +0800] [27032] [ERROR] Socket error processing request.
+Traceback (most recent call last):
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/gunicorn/workers/sync.py", line 190, in handle_request
+    util.reraise(*sys.exc_info())
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/gunicorn/util.py", line 625, in reraise
+    raise value
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/gunicorn/workers/sync.py", line 175, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/app.py", line 2463, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/app.py", line 2449, in wsgi_app
+    response = self.handle_exception(e)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/app.py", line 1866, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_restful/__init__.py", line 458, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/root/dev/flask_app/homepage-server/admin/admin.py", line 36, in get
+    # sender = EmailUtil(email)
+  File "/root/dev/flask_app/homepage-server/common/EmailUtil.py", line 11, in __init__
+    self.server = smtplib.SMTP("smtp.126.com", 25)
+  File "/root/.pyenv/versions/3.7.4/lib/python3.7/smtplib.py", line 251, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/root/.pyenv/versions/3.7.4/lib/python3.7/smtplib.py", line 336, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/root/.pyenv/versions/3.7.4/lib/python3.7/smtplib.py", line 307, in _get_socket
+    self.source_address)
+  File "/root/.pyenv/versions/3.7.4/lib/python3.7/socket.py", line 727, in create_connection
+    raise err
+  File "/root/.pyenv/versions/3.7.4/lib/python3.7/socket.py", line 716, in create_connection
+    sock.connect(sa)
+TimeoutError: [Errno 110] Connection timed out
+[2019-12-13 14:48:34 +0800] [30829] [INFO] Starting gunicorn 20.0.4
+[2019-12-13 14:48:34 +0800] [30829] [ERROR] Connection in use: ('127.0.0.1', 5051)
+[2019-12-13 14:48:34 +0800] [30829] [ERROR] Retrying in 1 second.
+[2019-12-13 14:48:35 +0800] [30829] [ERROR] Connection in use: ('127.0.0.1', 5051)
+[2019-12-13 14:48:35 +0800] [30829] [ERROR] Retrying in 1 second.
+[2019-12-13 14:48:36 +0800] [30829] [ERROR] Connection in use: ('127.0.0.1', 5051)
+[2019-12-13 14:48:36 +0800] [30829] [ERROR] Retrying in 1 second.
+[2019-12-13 14:48:37 +0800] [30829] [ERROR] Connection in use: ('127.0.0.1', 5051)
+[2019-12-13 14:48:37 +0800] [30829] [ERROR] Retrying in 1 second.
+[2019-12-13 14:48:38 +0800] [30829] [ERROR] Connection in use: ('127.0.0.1', 5051)
+[2019-12-13 14:48:38 +0800] [30829] [ERROR] Retrying in 1 second.
+[2019-12-13 14:48:39 +0800] [30829] [ERROR] Can't connect to ('127.0.0.1', 5051)
+[2019-12-13 15:15:40 +0800] [4104] [INFO] Starting gunicorn 20.0.4
+[2019-12-13 15:15:40 +0800] [4104] [INFO] Listening at: http://127.0.0.1:5051 (4104)
+[2019-12-13 15:15:40 +0800] [4104] [INFO] Using worker: sync
+[2019-12-13 15:15:40 +0800] [4112] [INFO] Booting worker with pid: 4112
+[2019-12-13 15:15:40 +0800] [4121] [INFO] Booting worker with pid: 4121
+[2019-12-13 15:15:40 +0800] [4125] [INFO] Booting worker with pid: 4125
