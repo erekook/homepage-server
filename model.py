@@ -17,6 +17,7 @@ class Category(db.Model):
 
     def json_str(self):
         return {
+            "id": self.id,
             "cate_name": self.cate_name
         }
 
@@ -48,6 +49,21 @@ class User(db.Model):
     def json_str(self):
         return {
             "email": self.email
+        }
+
+class LoginToken(db.Model):
+    __tablename__ = "login_token"
+    __table_args__ = {'extend_existing': True}
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=True)
+    user = db.relationship('User', backref=db.backref('_user'))
+    token = db.Column(db.String(500), nullable=False)
+    update_time = db.Column(db.DateTime, nullable=False, default=datetime.now)
+
+    def json_str(self):
+        return {
+            "user": self.user.json_str(),
+            "token": self.token
         }
 
 # blog and tag relationship table

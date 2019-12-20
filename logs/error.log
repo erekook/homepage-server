@@ -249,3 +249,188 @@ TimeoutError: [Errno 110] Connection timed out
 [2019-12-19 16:13:48 +0800] [20914] [INFO] Booting worker with pid: 20914
 [2019-12-19 16:13:48 +0800] [20915] [INFO] Booting worker with pid: 20915
 [2019-12-19 16:13:48 +0800] [20916] [INFO] Booting worker with pid: 20916
+[2019-12-20 10:16:58 +0800] [20160] [INFO] Starting gunicorn 20.0.4
+[2019-12-20 10:16:58 +0800] [20160] [ERROR] Connection in use: ('127.0.0.1', 5051)
+[2019-12-20 10:16:58 +0800] [20160] [ERROR] Retrying in 1 second.
+[2019-12-20 10:16:59 +0800] [20160] [ERROR] Connection in use: ('127.0.0.1', 5051)
+[2019-12-20 10:16:59 +0800] [20160] [ERROR] Retrying in 1 second.
+[2019-12-20 10:17:00 +0800] [20160] [ERROR] Connection in use: ('127.0.0.1', 5051)
+[2019-12-20 10:17:00 +0800] [20160] [ERROR] Retrying in 1 second.
+[2019-12-20 10:17:01 +0800] [20160] [ERROR] Connection in use: ('127.0.0.1', 5051)
+[2019-12-20 10:17:01 +0800] [20160] [ERROR] Retrying in 1 second.
+[2019-12-20 10:17:02 +0800] [20160] [ERROR] Connection in use: ('127.0.0.1', 5051)
+[2019-12-20 10:17:02 +0800] [20160] [ERROR] Retrying in 1 second.
+[2019-12-20 10:17:03 +0800] [20160] [ERROR] Can't connect to ('127.0.0.1', 5051)
+[2019-12-20 10:17:03 +0800] [20914] [INFO] Parent changed, shutting down: <Worker 20914>
+[2019-12-20 10:17:03 +0800] [20914] [INFO] Worker exiting (pid: 20914)
+[2019-12-20 10:17:03 +0800] [20916] [INFO] Parent changed, shutting down: <Worker 20916>
+[2019-12-20 10:17:03 +0800] [20916] [INFO] Worker exiting (pid: 20916)
+[2019-12-20 10:17:06 +0800] [20915] [INFO] Parent changed, shutting down: <Worker 20915>
+[2019-12-20 10:17:06 +0800] [20915] [INFO] Worker exiting (pid: 20915)
+[2019-12-20 10:20:06 +0800] [21142] [INFO] Starting gunicorn 20.0.4
+[2019-12-20 10:20:06 +0800] [21142] [INFO] Listening at: http://127.0.0.1:5051 (21142)
+[2019-12-20 10:20:06 +0800] [21142] [INFO] Using worker: sync
+[2019-12-20 10:20:06 +0800] [21149] [INFO] Booting worker with pid: 21149
+[2019-12-20 10:20:06 +0800] [21154] [INFO] Booting worker with pid: 21154
+[2019-12-20 10:20:06 +0800] [21160] [INFO] Booting worker with pid: 21160
+[2019-12-20 10:25:30 +0800] [21154] [ERROR] Error handling request /api/v1/blog/blogs
+Traceback (most recent call last):
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/gunicorn/workers/sync.py", line 175, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/app.py", line 2463, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/app.py", line 2449, in wsgi_app
+    response = self.handle_exception(e)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/app.py", line 1866, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_restful/__init__.py", line 458, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/root/dev/flask_app/homepage-server/common/TokenUtil.py", line 40, in decorated_function
+    token = request.headers['Authorization']
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/werkzeug/datastructures.py", line 1375, in __getitem__
+    return _unicodify_header_value(self.environ["HTTP_" + key])
+KeyError: 'HTTP_AUTHORIZATION'
+[2019-12-20 10:26:53 +0800] [21160] [ERROR] Error handling request /api/v1/blog/blogs
+Traceback (most recent call last):
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/gunicorn/workers/sync.py", line 175, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/app.py", line 2463, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/app.py", line 2449, in wsgi_app
+    response = self.handle_exception(e)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/app.py", line 1866, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_restful/__init__.py", line 458, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/root/dev/flask_app/homepage-server/common/TokenUtil.py", line 40, in decorated_function
+    token = request.headers['Authorization']
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/werkzeug/datastructures.py", line 1375, in __getitem__
+    return _unicodify_header_value(self.environ["HTTP_" + key])
+KeyError: 'HTTP_AUTHORIZATION'
+[2019-12-20 10:27:09 +0800] [21160] [ERROR] Error handling request /api/v1/blog/blogs
+Traceback (most recent call last):
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/gunicorn/workers/sync.py", line 175, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/app.py", line 2463, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/app.py", line 2449, in wsgi_app
+    response = self.handle_exception(e)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/app.py", line 1866, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_restful/__init__.py", line 458, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/root/dev/flask_app/homepage-server/common/TokenUtil.py", line 40, in decorated_function
+    token = request.headers['Authorization']
+  File "/root/.local/share/virtualenvs/homepage-server-TG0tjJEm/lib/python3.7/site-packages/werkzeug/datastructures.py", line 1375, in __getitem__
+    return _unicodify_header_value(self.environ["HTTP_" + key])
+KeyError: 'HTTP_AUTHORIZATION'
+[2019-12-20 10:27:52 +0800] [21154] [INFO] Parent changed, shutting down: <Worker 21154>
+[2019-12-20 10:27:52 +0800] [21154] [INFO] Worker exiting (pid: 21154)

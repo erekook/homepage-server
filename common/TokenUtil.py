@@ -4,6 +4,9 @@ import hmac
 from functools import wraps
 from flask import request
 from common.BaseResponse import base_response
+import sys
+sys.path.append('..')
+import model
 
 #生成token 入参：用户email
 def generate_token(key, expire=3600):
@@ -38,9 +41,8 @@ def login_required(f):
     @wraps(f)
     def decorated_function(*args, **wkargs):
         token = request.headers['Authorization']
-        email = f(*args, **wkargs)
-        is_pass = certify_token(email, token)
-        if not is_pass:
+        login_token = model.LoginToken.query.filter_by(token=token).first()
+        if not login_token:
             return base_response(code=-1,msg="未登陆")
         return f(*args, **wkargs)
     return decorated_function

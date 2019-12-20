@@ -87,16 +87,17 @@ class Register(Resource):
 
             ## 返回token
             token = generate_token(param.email)
-            return base_response(data={ "token":token, "user": user.json_str() })
+            print(user.json_str())
+            # 保存token
+            login_token = model.LoginToken(token=token)
+            login_token.user = user
+            db.session.add(login_token)
+
+            db.session.commit()
+            
+            return base_response(data={ "token": token, "user": user.json_str() })
 
 class Login(Resource):
-    # @login_required
-    # def get(self, email):
-    #     return email
-    
-    # def do_something(email, isPass):
-    #     return email
-
     def post(self):
         param = parser.parse_args()
         if not param.email:
@@ -110,9 +111,21 @@ class Login(Resource):
             return base_response(code=-1,msg="未找到用户，请注册")
         if user.verify_password(param.pwd):
             token = generate_token(param.email)
+            # 保存token
+            login_token = model.LoginToken.query.filter_by(token=token).first()
+            if not login_token:
+                new_login_token = model.LoginToken(token=token)
+                new_login_token.user = user
+                new_login_token.user = user
+                db.session.add(new_login_token)
+            else:
+                login_token.update_time = datetime.now
+                db.session.add(login_token)
+            db.session.commit()
             return base_response(data={ "token": token, "user": user.json_str() })
         else:
             return base_response(code=-1,msg="密码错误")
+
 
 
 
