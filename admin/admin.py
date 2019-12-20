@@ -32,10 +32,8 @@ class SendEmailCode(Resource):
         # genarate 6 random code
         rand_code = "".join([str(random.randint(0,9)) for n in range(6)])
         
-        print('i am here')
         # send email code...
         sender = EmailUtil(email)
-        print('after init ')
         sender.send_email_code(rand_code)
         # save code to db
         emailCode = model.EmailCode.query.filter_by(email=email).first()
