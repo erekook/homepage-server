@@ -6,6 +6,7 @@ sys.path.append("..")
 import model
 from app import db
 from common.BaseResponse import base_response
+from common.TokenUtil import generate_token, certify_token, login_required
 
 api = Api(blog_bp)
 
@@ -15,13 +16,20 @@ api = Api(blog_bp)
 parser = reqparse.RequestParser()
 parser.add_argument('title', type=str)
 parser.add_argument('content', type=str)
-parser.add_argument('create_time', type=str)
-parser.add_argument('user_id', type=int)
-parser.add_argument('category_id', type=int)
+parser.add_argument('email', type=str)
+parser.add_argument('tag_names', action='append')
+parser.add_argument('cate_id', type=int)
 
+class CategoryList(Resource):
+    def get(self):
+        categorys = model.Category.query.all()
+        if categorys:
+            return base_response(data=[category.json_str() for category in categorys])
+        return base_response(code=-1, msg="没有找到分类")
 
 class BlogList(Resource):
     # 获取所有文章
+    @login_required
     def get(self):
         blogs = model.Blog.query.all()
         if blogs:
@@ -29,21 +37,54 @@ class BlogList(Resource):
         return base_response(code=-1, msg="没有文章")
 
     # 新增一篇文章
+    @login_required
     def post(self):
         param = parser.parse_args()
-        blog = model.Blog(title=param.title, content=param.content, create_time=datetime.strptime(param.create_time, '%Y-%m-%d'), user_id= param.user_id, category_id=param.category_id)
+        token = request.headers['Authorization']
+        user = model.User.query.filter_by(email=param.email).first()
+        if not user:
+            return base_response(code=-1, msg="用户不存在")
+
+        if not param.title:
+            return base_response(code=-2)
+            
+        if not param.content:
+            return base_response(code=-2)
+
+        if not param.cate_id:
+            return base_response(code=-2)
+        
+        all_tags = model.Tag.query.all()
+        # 最终博客的tags
+        tags = []
+        
+        # 循环参数的tag名
+        for tag_name in param.tag_names:
+            # 判断是否有该tag
+           for index in all_tags:
+                if tag_name == all_tags[index].tag_name:
+                    tags.append(all_tags[index])
+                else:
+                    new_tag = model.Tag(tag_name=tag_name)
+                    tags.append(new_tag)
+    
+        blog = model.Blog(title=param.title, content=param.content, category_id=param.cate_id)
+        blog.user = user
+        blog.tags = tags
         db.session.add(blog)
         db.session.commit()
         return base_response()
 
 class BlogById(Resource):
     # 根据id查找文章
+    @login_required
     def get(self, blog_id):
         blog = model.Blog.query.filter_by(id=blog_id).first()
         return base_response(data=blog.json_str())
 
 class BlogByTitle(Resource):
     # 根据title查找文章
+    @login_required
     def get(self, title):
         blog = model.Blog.query.filter_by(title=title).first()
         if blog:
@@ -53,3 +94,4 @@ class BlogByTitle(Resource):
 api.add_resource(BlogList, '/blogs')
 api.add_resource(BlogById, '/<int:blog_id>')
 api.add_resource(BlogByTitle, '/findByTitle/<string:title>')
+api.add_resource(CategoryList, '/categorys')

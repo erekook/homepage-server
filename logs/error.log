@@ -213,3 +213,39 @@ TimeoutError: [Errno 110] Connection timed out
 [2019-12-13 15:15:40 +0800] [4112] [INFO] Booting worker with pid: 4112
 [2019-12-13 15:15:40 +0800] [4121] [INFO] Booting worker with pid: 4121
 [2019-12-13 15:15:40 +0800] [4125] [INFO] Booting worker with pid: 4125
+[2019-12-13 16:53:48 +0800] [23004] [INFO] Starting gunicorn 20.0.4
+[2019-12-13 16:53:48 +0800] [23004] [INFO] Listening at: http://127.0.0.1:5050 (23004)
+[2019-12-13 16:53:48 +0800] [23004] [INFO] Using worker: sync
+[2019-12-13 16:53:48 +0800] [23013] [INFO] Booting worker with pid: 23013
+[2019-12-13 16:53:48 +0800] [23017] [INFO] Booting worker with pid: 23017
+[2019-12-13 16:53:49 +0800] [23022] [INFO] Booting worker with pid: 23022
+[2019-12-13 16:54:03 +0800] [4125] [INFO] Parent changed, shutting down: <Worker 4125>
+[2019-12-13 16:54:03 +0800] [4125] [INFO] Worker exiting (pid: 4125)
+[2019-12-13 16:54:03 +0800] [4121] [INFO] Parent changed, shutting down: <Worker 4121>
+[2019-12-13 16:54:03 +0800] [4121] [INFO] Worker exiting (pid: 4121)
+[2019-12-13 16:54:30 +0800] [4112] [INFO] Parent changed, shutting down: <Worker 4112>
+[2019-12-13 16:54:30 +0800] [4112] [INFO] Worker exiting (pid: 4112)
+[2019-12-13 16:55:09 +0800] [23344] [INFO] Starting gunicorn 20.0.4
+[2019-12-13 16:55:09 +0800] [23344] [INFO] Listening at: http://127.0.0.1:5051 (23344)
+[2019-12-13 16:55:09 +0800] [23344] [INFO] Using worker: sync
+[2019-12-13 16:55:09 +0800] [23351] [INFO] Booting worker with pid: 23351
+[2019-12-13 16:55:09 +0800] [23353] [INFO] Booting worker with pid: 23353
+[2019-12-13 16:55:09 +0800] [23355] [INFO] Booting worker with pid: 23355
+[2019-12-13 16:55:49 +0800] [23013] [INFO] Parent changed, shutting down: <Worker 23013>
+[2019-12-13 16:55:49 +0800] [23013] [INFO] Worker exiting (pid: 23013)
+[2019-12-13 16:55:50 +0800] [23017] [INFO] Parent changed, shutting down: <Worker 23017>
+[2019-12-13 16:55:50 +0800] [23017] [INFO] Worker exiting (pid: 23017)
+[2019-12-13 16:55:50 +0800] [23022] [INFO] Parent changed, shutting down: <Worker 23022>
+[2019-12-13 16:55:50 +0800] [23022] [INFO] Worker exiting (pid: 23022)
+[2019-12-19 16:12:27 +0800] [23355] [INFO] Parent changed, shutting down: <Worker 23355>
+[2019-12-19 16:12:27 +0800] [23355] [INFO] Worker exiting (pid: 23355)
+[2019-12-19 16:12:27 +0800] [23353] [INFO] Parent changed, shutting down: <Worker 23353>
+[2019-12-19 16:12:27 +0800] [23353] [INFO] Worker exiting (pid: 23353)
+[2019-12-19 16:13:07 +0800] [23351] [INFO] Parent changed, shutting down: <Worker 23351>
+[2019-12-19 16:13:07 +0800] [23351] [INFO] Worker exiting (pid: 23351)
+[2019-12-19 16:13:48 +0800] [20892] [INFO] Starting gunicorn 20.0.4
+[2019-12-19 16:13:48 +0800] [20892] [INFO] Listening at: http://127.0.0.1:5051 (20892)
+[2019-12-19 16:13:48 +0800] [20892] [INFO] Using worker: sync
+[2019-12-19 16:13:48 +0800] [20914] [INFO] Booting worker with pid: 20914
+[2019-12-19 16:13:48 +0800] [20915] [INFO] Booting worker with pid: 20915
+[2019-12-19 16:13:48 +0800] [20916] [INFO] Booting worker with pid: 20916

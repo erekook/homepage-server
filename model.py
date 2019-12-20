@@ -50,6 +50,32 @@ class User(db.Model):
             "email": self.email
         }
 
+# blog and tag relationship table
+#blog_with_tag = db.Table('blog_with_tag', 
+        #db.Column('blog_id', db.Integer, db.ForeignKey('blog.id')),
+        #db.Column('tag_id', db.Integer, db.ForeignKey('tag.id'))
+     #)
+class BlogWithTag(db.Model):
+    __tablename__ = "blog_with_tag"
+    __table_args__ = {'extend_existing': True}
+    blog_id = db.Column(db.Integer, db.ForeignKey('blog.id'), primary_key=True)
+    tag_id = db.Column(db.Integer, db.ForeignKey('tag.id'), primary_key=True)
+
+    
+
+# tag
+class Tag(db.Model):
+    __tablename__ = "tag"
+    __table_args__ = {'extend_existing': True}
+    id = db.Column(db.Integer, primary_key=True)
+    tag_name = db.Column(db.String(100), nullable=False)
+    create_time = db.Column(db.DateTime, nullable=False, default=datetime.now) 
+    blogs = db.relationship('Blog', secondary='blog_with_tag', backref="_blog")    
+
+    def json_str(self):
+        return {
+            "tag_name": self.tag_name
+        }
 
 # article
 class Blog(db.Model):
@@ -66,6 +92,8 @@ class Blog(db.Model):
     # 外键关联category表每个topic对象都有一个category属性
     category_id = db.Column(db.Integer, db.ForeignKey("category.id"), nullable=False)
     category = db.relationship('Category', backref=db.backref('category_blogs', lazy=True))
+
+    tags = db.relationship('Tag', secondary='blog_with_tag', backref="_tag")
     
     def __repr__(self):
         return '<blog %r>' % self.title
