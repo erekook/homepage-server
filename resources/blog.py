@@ -41,7 +41,8 @@ class BlogList(Resource):
     def post(self):
         param = parser.parse_args()
         token = request.headers['Authorization']
-        user = model.User.query.filter_by(email=param.email).first()
+        login_token = model.LoginToken.query.filter_by(token=token).first()
+        user = login_token.user
         if not user:
             return base_response(code=-1, msg="用户不存在")
 
@@ -53,24 +54,27 @@ class BlogList(Resource):
 
         if not param.cate_id:
             return base_response(code=-2)
-        
+    
+        blog = model.Blog(title=param.title, content=param.content, category_id=param.cate_id)
+        blog.user = user
+
         all_tags = model.Tag.query.all()
         # 最终博客的tags
         tags = []
         
-        # 循环参数的tag名
-        for tag_name in param.tag_names:
-            # 判断是否有该tag
-           for index in all_tags:
-                if tag_name == all_tags[index].tag_name:
-                    tags.append(all_tags[index])
-                else:
-                    new_tag = model.Tag(tag_name=tag_name)
-                    tags.append(new_tag)
-    
-        blog = model.Blog(title=param.title, content=param.content, category_id=param.cate_id)
-        blog.user = user
-        blog.tags = tags
+        if len(param.tag_names) != 0:
+            # 循环参数的tag名
+            for tag_name in param.tag_names:
+                # 判断是否有该tag
+            for index in all_tags:
+                    if tag_name == all_tags[index].tag_name:
+                        tags.append(all_tags[index])
+                    else:
+                        new_tag = model.Tag(tag_name=tag_name)
+                        tags.append(new_tag)
+
+            blog.tags = tags
+            
         db.session.add(blog)
         db.session.commit()
         return base_response()
